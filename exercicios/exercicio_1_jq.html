@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hide em Jquery</title>
+
+        <script 
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
+
+        <style>
+            .style-div {
+                margin: 0 auto;
+                border: 1px solid #000000;
+                border-radius: 3px;
+                box-shadow: 1px 1px 6px 2px #000000;
+                text-align: center;
+            }
+
+            div#pai {
+                width: 50%;
+                height: 10em;
+                background-color: #cccccc;
+                padding: 1em;
+            }
+
+            div#filha {
+                width: 50%;
+                height: 5em;
+                background-color: #ffffff;
+            }
+
+            div p{
+                font-size: 2em;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pai" class="style-div">
+            <div id="filha" class="style-div"></div>
+            <p></p>
+        </div>
+    </body>
+
+    <script>
+
+        $('#filha').click(() => {
+            $('#filha').hide(1000);
+            $('p').html('Só magia top !');
+        });
+
+        $('p').click(() => {
+            $('#filha').show(3000);
+            $('p').html('');
+        });
+
+        $('#')
+    </script>
+</html>

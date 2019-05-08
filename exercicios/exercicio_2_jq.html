@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Criando elementos em jquery</title>
+
+        <script 
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
+
+        <style>
+
+            .sty {
+                width: 10%;
+                height: 5em;
+                border: 1px dotted #000000;
+                background-color: #ffffff;
+                margin: 10px;
+            }
+
+            div#pai {
+                width: 50%;
+                height: 90vh;
+                margin: 0 auto;
+                background-color: #cccccc;
+                padding: 5px;
+                border: 1px solid #000000;
+                border-radius: 3px;
+                box-shadow: 1px 1px 6px 2px #000000;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+            }
+
+            .close {
+                width: 30%;
+                height: 50em;
+                height: auto;
+                justify-content: flex-end;
+                margin: 2px;
+                border: 1px solid #000000;
+            }
+
+            .close:hover {
+                transform: scale(1.1, 1.1);
+                transition: all;
+                transition-delay: 90ms;
+                transition-delay: 100ms;
+                background-color: #ff0000;
+                color: #ffffff;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pai">
+        </div>
+    </body>
+
+    <script>
+        $('#pai').dblclick(() => $('#pai').append(`
+            <div class="sty">
+                <div class="close" onclick="remove()">
+                    x
+                </div>
+            <div>`));
+
+            
+
+        function remove() {
+            $('.close').click(function(){
+                $( this ).parent().get( 0 ).remove();
+            });
+        }
+    </script>
+</html>

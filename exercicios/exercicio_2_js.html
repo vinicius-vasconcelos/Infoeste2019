@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Criando elementos em Javascript</title>
+
+        <style>
+
+            .sty {
+                border: 1px dotted #000000;
+                background-color: #ffffff;
+                margin: 10px;
+            }
+
+            div#pai {
+                width: 50%;
+                height: 90vh;
+                background-color: #cccccc;
+                padding: 5px;
+                margin: 0 auto;
+                border: 1px solid #000000;
+                border-radius: 3px;
+                box-shadow: 1px 1px 6px 2px #000000;
+                text-align: center;
+            }
+
+            div p{
+                font-size: 2em;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pai" onclick="criaFilho()">
+        </div>
+    </body>
+
+    <script>
+        function criaFilho() {
+            let newP = document.createElement('p');
+            let text = document.createTextNode('Olá sou um novo filho');
+            newP.classList.add('sty');
+            newP.appendChild(text);
+
+            let pai = document.getElementById('pai');
+            pai.appendChild(newP);
+        }
+    </script>
+</html>
