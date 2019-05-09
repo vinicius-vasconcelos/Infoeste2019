@@ -4,7 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Principal</title>
+        <title>Principal Jquery</title>
+
+        <script 
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
 
         <link rel="stylesheet" href="css.css">
     </head>
@@ -14,9 +20,9 @@
         <nav>
             <menu>
                 <ul>
-                    <li><a href="#" onclick="reqPage('home.html')"> Home </a></li>
-                    <li><a href="#" onclick="reqPage('dados.html')"> Dados </a></li>
-                    <li><a href="#" onclick="reqPage('sobre.html')"> Sobre </a></li>
+                    <li><a id="home" href="#"> Home </a></li>
+                    <li><a id="dados" href="#"> Dados </a></li>
+                    <li><a id="sobre" href="#"> Sobre </a></li>
                 </ul>
             </menu>
         </nav>
@@ -30,20 +36,15 @@
 
     <!-- OBJ AJAX -->
     <script>
-        function reqPage(url) {
-            document.getElementById('conteudo').innerHTML = '';
+        $('a').click(function() {
+            $('#conteudo').html('');
 
-            let ajax = new XMLHttpRequest();
-            ajax.open('GET', url);
-        
-            ajax.onreadystatechange = () => {
-                if(ajax.readyState == 4 && ajax.status == 200)
-                    document.getElementById('conteudo').innerHTML = ajax.responseText;
-
-                if(ajax.readyState == 4 && ajax.status == 404) 
-                   document.getElementById('conteudo').innerHTML = 'Error 404 - Page not found !!!';
-            }
-            ajax.send();
-        }
-    </script>
+            $.ajax({
+                url: `${this.id}.html`,
+                method:'get',
+                success: respText => $('#conteudo').append(respText),
+                error: errText => $('#conteudo').text('Page not found'),
+            });
+        })
+     </script>
 </html>
