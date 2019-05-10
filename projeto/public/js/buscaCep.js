@@ -1,17 +1,14 @@
-//Máscara CEP
-$(document).ready(() => $('#cep').mask('00000-000'));
 
 //pesquisando cep
 $(document).ready(function() {
-
     // Limpa valores do formulário de cep.
     function limpa_formulário_cep() { 
+        $('#cep').val('');
         $('#rua').val('');
         $('#bairro').val('');
         $('#cidade').val('');
         $('#uf').val('');
         $('#numero').val('');
-        $('#complemento').val('');
     }
     
     //Quando o campo cep perde o foco.
@@ -35,9 +32,7 @@ $(document).ready(function() {
                 $('#cidade').val('...');
                 $('#uf').val('...');
                 $('#numero').val('...');
-                $('#complemento').val('...');
                
-
                 //Consulta o webservice viacep.com.br/
                 $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
 
@@ -48,7 +43,6 @@ $(document).ready(function() {
                         $('#cidade').val(dados.localidade);
                         $('#uf').val(dados.uf);
                         $('#numero').val('');
-                        $('#complemento').val('');
                     } else {
                         //CEP pesquisado não foi encontrado.
                         limpa_formulário_cep();
