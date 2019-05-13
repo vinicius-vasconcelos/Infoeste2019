@@ -1,4 +1,5 @@
 $(document).ready(() =>{
+
     $('#codigo').blur(function() {
         console.log(`nice ${this}`);
     });
@@ -31,10 +32,14 @@ function validar() {
 
 function addTable(c, n) {
     $('tbody').append(`
-        <tr>
+        <tr onclick="removeTable(this)">
             <td>${c}</td>
             <td>${n}</td>
-            <td>X</td>
+            <td><a href="#">X</a></td>
         </tr>
     `)
+}
+
+function removeTable(tr) {
+    $(tr).remove();
 }
