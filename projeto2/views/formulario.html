@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Formulário</title>
+
+        <!--link o css-->
+
+        <!--link o jquery-->
+       
+        <!--link my_javascrip-->
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+
+        <nav>
+            <menu>
+                <ul>
+                    <!--colocar o caminho das outras páginas-->
+                    <li><a >Home</a></li>
+                    <li><a >Formulário</a></li>
+                    <li><a >Busca Cep</a></li>
+                    <li><a >Sobre</a></li>
+                </ul>
+            </menu>
+        </nav>
+
+        <main>
+            <article id="conteudo">
+
+                <section id="cadastro">
+                    <section id="form">
+                        <h1> Formulário </h1>
+                        <hr>
+                        <form action="#">
+                            <label for="codigo">Código:(*)</label> <br>
+                            <input type="number" id="codigo" name="codigo" autofocus> <br>
+
+                            <label for="nome">Nome:(*)</label> <br>
+                            <input type="text" id="nome" name="nome" placeholder="Entre com seu nome(max 10 carcateres)">
+                            <br>
+
+                            <label for="email">E-mail:(*)</label> <br>
+                            <input type="email" id="email" name="email" placeholder="fulano@gmail.com"> <br>
+
+                            <label for="cursos">Curso:(*)</label> <br>
+                            <select name="cursos" id="cursos"> <br>
+                                <option value=""></option>
+                                <option value="BCC">BCC</option>
+                                <option value="BSI">BSI</option>
+                                <option value="TSI">TSI</option>
+                            </select>
+
+                            <label for="mensagem">Mensagem:</label> <br>
+                            <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
+
+                            <!--colocar os eventos de validação de formulario-->
+                            <button type="button" class="sucesso">Cadastrar</button>
+                            <button class="cancela">Cancelar</button>
+                        </form>
+                    </section>
+
+
+                    <section id="tabela">
+                        <h1> Tabela </h1>
+                        <hr>
+                        <table>
+                            <caption>Pessoas Adicionadas</caption>
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nome</th>
+                                    <th>Ação</th>
+                                    <th>Alteração</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                    </section>
+                </section>
+            </article>
+        </main>
+    </body>
+
+</html>

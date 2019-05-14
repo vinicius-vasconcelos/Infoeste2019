@@ -40,7 +40,7 @@ function validar() {
 }
 
 function addTable(c, n, cu) {
-    $('tbody').append(`
+    $'('tbody').append(`
         <tr id="${c}#${n}#${cu}">
             <td>${c}</td>
             <td>${n}</td>
