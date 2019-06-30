@@ -27,3 +27,5 @@ Inicio do projeto;
 Recapitulando rapidamente o que foi mostrado em aulas anteriores; 
 Continuação do projeto; 
 Finalização do projeto;
+
+<small><em>Semana de infomática na <a href="http://www.unoeste.br/fipp"><strong>Fipp - Unoeste</strong></a>.</em></small>
